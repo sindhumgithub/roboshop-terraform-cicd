@@ -65,8 +65,8 @@ pipeline {
             steps {
                 script {
                     build job: '10-sg',
-                        wait: false, // Wait for completion
-                        propagate: false // Propagate status
+                        wait: false, //False means NOT required to Wait for completion till another services runs
+                        propagate: false // Propagate status NOT required. if sg fails then sg itself should fail but not impact other services.
                 }
             }
         }
